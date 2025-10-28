@@ -2,33 +2,89 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles/layout.css">
-    <meta name="description" content="Gary Selios">
-    <meta name="author" content="Gary Selios">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD - 131</title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals - Gary Selios - Personal portfolio and course projects">
+    <meta name="author" content="Gary Selios">
+    <title>WDD 131 – Dynamic Web Fundamentals – Gary Selios</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h1 contenteditable>Header Content</h1>
+        <h1><span id="course-title">WDD 131 – Dynamic Web Fundamentals</span></h1>
+        <nav>
+            <a href="https://www.linkedin.com">LinkedIn</a>
+            <a href="https://byupw.instructure.com/">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures">Scriptures</a>
+            <a href="#">Final Project</a>
+        </nav>
     </header>
 
-    <nav class="main-nav">
-        <div class="nav-item" contenteditable>Home</div>
-        <div class="nav-item" contenteditable>Projects</div>
-        <div class="nav-item" contenteditable>Services</div>
-        <div class="nav-item" contenteditable>Contact Us</div>
-    </nav>
 
-    <div class="content-area">
-        <main class="main-content" contenteditable>Main Content</main>
-        <aside class="aside-content" contenteditable>Aside Content</aside>
-    </div>
+    <main>
+        <h1>Rubia Francesco</h1>
+
+        <div class="main-container">
+            <!-- Columna izquierda: About Me y Madagascar EN EL MISMO CUADRO -->
+            <div class="left-column">
+                <section class="card">
+                    <!-- About Me -->
+                    <div class="section-container">
+                        <h2 class="blue-title">About Me</h2>
+                        <div class="card-content">
+                            <div class="text-content">
+                                <p>My name is Rubia and I go by Ruby. I was born in South Africa and live with my family
+                                    in Madagascar. I am currently working as an administrative legal assistant at a law
+                                    firm. My children are my world and I love spending time with them. I love to travel
+                                    and I love to learn new things.</p>
+                            </div>
+                            <img src="images/profiles.jpg" alt="Rubia's Photo">
+                        </div>
+                    </div>
+
+                    <!-- Línea horizontal divisoria -->
+                    <hr class="divider">
+
+                    <!-- Madagascar -->
+                    <div class="section-container">
+                        <h2>Madagascar</h2>
+                        <div class="card-content madagascar-content">
+                            <img src="images/madagascar.jpg" alt="Madagascar">
+                            <div class="text-content">
+                                <p>Madagascar is the 4th largest island in the world and is located in the Indian Ocean.
+                                    It is home to 5% of the world's plant and animal species, of which more than 80% are
+                                    endemic to Madagascar. The island is best known for its lemurs, baobab trees, and
+                                    vanilla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna derecha: Web Dev Resources -->
+            <div class="right-column">
+                <section class="card">
+                    <h2 class="blue-title">Web Dev Resources</h2>
+                    <ul>
+                        <li><a href="#">Dev.to Community</a></li>
+                        <li><a href="#">Smashing Magazine</a></li>
+                        <li><a href="#">CSS Tricks</a></li>
+                        <li><a href="#">W3 Schools</a></li>
+                        <li><a href="#">Udemy</a></li>
+                        <li><a href="#">Image Placeholder</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
 
     <footer>
-        <p contenteditable>Footer Content</p>
+        <p>©<span id="currentyear"></span> text</p>
+        <p id="lastModified">Last modification: 01/09/2025 12:15:33</p>
     </footer>
 </body>
 
