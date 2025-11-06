@@ -1,0 +1,95 @@
+/* Tablet y Desktop */
+@media (min-width: 768px) {
+
+    /* Desktop Header and Navigation */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+
+    /* Hide hamburger button on desktop */
+    #menu-button {
+        display: none;
+    }
+
+    /* Show horizontal navigation on desktop */
+    #main-nav {
+        display: block;
+        background: none;
+        margin-top: 0;
+    }
+
+    #main-nav ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    #main-nav a {
+        padding: 0.5rem 1rem;
+        border: 2px solid transparent;
+        border-radius: 25px;
+        border-bottom: none;
+        transition: all 0.3s;
+    }
+
+    #main-nav a:hover {
+        background-color: #34495e;
+        border-color: #e74c3c;
+        transform: translateY(-2px);
+    }
+
+    /* Desktop Gallery - 2 columns */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Main padding increased */
+    main {
+        padding: 2rem;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1024px) {
+
+    /* Large Desktop Gallery - 3 columns */
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    /* More spacious header */
+    header {
+        padding: 1.5rem 3rem;
+    }
+
+    #main-nav ul {
+        gap: 2rem;
+    }
+
+    /* Bigger titles */
+    main h1 {
+        font-size: 2.5rem;
+        margin: 2rem 0;
+    }
+}
+
+/* Very large screens */
+@media (min-width: 1440px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    figure img {
+        height: 300px;
+    }
+}

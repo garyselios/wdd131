@@ -1,0 +1,153 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Header and Mobile Navigation */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Hamburger Button */
+#menu-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#menu-button:hover {
+    background-color: #34495e;
+}
+
+/* Mobile Navigation (hidden by default) */
+#main-nav {
+    display: none;
+    background-color: #34495e;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+}
+
+#main-nav.active {
+    display: block;
+}
+
+#main-nav ul {
+    list-style: none;
+}
+
+#main-nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #4a6278;
+    transition: background-color 0.3s;
+}
+
+#main-nav a:hover {
+    background-color: #4a6278;
+}
+
+#main-nav a:last-child {
+    border-bottom: none;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main h1 {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+/* Mobile Gallery - 1 column */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+figure {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    padding: 1rem;
+    text-align: center;
+    background-color: #ecf0f1;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
