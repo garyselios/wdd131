@@ -1,3 +1,47 @@
+/* ===== GLOBAL VARIABLES ===== */
+:root {
+    /* Colors based on Madagascar flag */
+    --color-primary: #ff1104;
+    /* Flag red */
+    --color-secondary: #000000;
+    /* Flag green */
+    --color-accent: #FFFFFF;
+    /* White */
+    --color-dark: #000000;
+    /* Dark blue for contrast */
+    --color-light: #F8F9FA;
+    /* Light gray */
+    --color-text: #333333;
+    /* Main text */
+    --color-text-light: #7F8C8D;
+    /* Secondary text */
+
+
+    /* Typography */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Borders */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESET AND BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -5,134 +49,358 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.6;
-    color: #333;
-    background-color: white;
-    min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.container {
-    width: 100%;
+    color: var(--color-text);
+    background: linear-gradient(135deg, #ff1104 50%, #000000 50%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-    background: white;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-accent);
+    padding: var(--spacing-lg) 0;
     text-align: center;
-    padding: 40px 20px;
-    background: rgb(75, 197, 64);
-    width: 100%;
+    box-shadow: var(--shadow-md);
 }
 
-h1 {
-    font-size: 4rem;
-    color: #ffffff;
-    font-weight: bold;
+header h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* HERO SECTION */
-.hero-section {
+/* ===== MAIN CONTENT ===== */
+main {
+    max-width: 1800px;
+    margin: var(--spacing-md) auto;
+    padding: 0;
     flex: 1;
-    position: relative;
+    display: flex;
+    flex-direction: column;
     min-height: 70vh;
-    padding: 40px 20px;
+    position: relative;
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.background-image {
+/* ===== HERO IMAGE - DESKTOP ===== */
+.hero-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
     z-index: 1;
-    opacity: 0;
+    overflow: hidden;
 }
 
-.cards-overlay {
-    position: relative;
-    z-index: 2;
+.hero-image img {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    object-fit: cover;
+    display: block;
 }
 
-/* TARJETAS - MOBILE FIRST */
-.data-card,
-.weather-card {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    width: 100%;
+/* ===== SECTIONS POSITIONING ===== */
+#data {
+    align-self: flex-start;
+    margin-left: -40px;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
 }
 
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #2c3e50;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 10px;
+#weather {
+    align-self: flex-end;
+    margin-right: -40px;
+    margin-left: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Pseudo-element for weather icon in desktop */
+#weather h2::after {
+    content: " ☀️";
+    /* Emoji for desktop */
+    font-size: var(--font-size-lg);
+    margin-left: var(--spacing-xs);
+}
+
+/* ===== SECTIONS ===== */
+section {
+    background: var(--color-accent);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 420px;
+    min-height: auto;
+    border: 2px solid var(--color-primary);
+}
+
+section h2 {
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 3px solid var(--color-secondary);
+    padding-bottom: var(--spacing-xs);
     text-align: center;
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+/* ===== DATA SECTION ===== */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
 }
 
 .info-item {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
-    border-bottom: 2px solid #ecf0f1;
-    font-size: 1.8rem;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid #ECF0F1;
+    align-items: center;
+    min-height: 45px;
+    transition: background-color 0.3s ease;
+}
+
+.info-item:hover {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
 }
 
 .info-item:last-child {
     border-bottom: none;
 }
 
+/* ===== WEATHER SECTION ===== */
+.weather-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: var(--border-radius);
+    color: var(--color-accent);
+    align-items: center;
+    min-height: 50px;
+    transition: transform 0.2s ease;
+}
+
+.weather-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Weather icon for mobile */
+.weather-icon-mobile {
+    display: none;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    margin-left: var(--spacing-xs);
+    filter: brightness(0) invert(1);
+    /* Makes SVG white */
+}
+
+/* Text for desktop */
+.weather-icon-desktop {
+    display: inline;
+}
+
+/* ===== LABELS AND VALUES ===== */
 .label {
-    font-weight: bold;
-    color: #2c3e50;
-    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: var(--font-size-base);
 }
 
 .value {
-    color: #7f8c8d;
-    font-size: 1.8rem;
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+    font-weight: 500;
 }
 
-/* FOOTER */
+.weather-item .label {
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.weather-item .value {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
 footer {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-accent);
     text-align: center;
-    padding: 40px 20px;
-    background: rgb(75, 197, 64);
+    padding: var(--spacing-lg) 0;
     width: 100%;
     margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    box-shadow: var(--shadow-md) inset;
 }
 
-.copyright {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: white;
+footer p {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    font-weight: 500;
 }
 
-.last-modified {
-    font-style: italic;
-    font-size: 1.2rem;
-    color: white;
+footer address {
+    font-style: normal;
+    margin-top: var(--spacing-xs);
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    :root {
+        --font-size-2xl: 1.75rem;
+        --font-size-xl: 1.25rem;
+    }
+
+    header {
+        padding: var(--spacing-md) 0;
+    }
+
+    header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    /* Hero Image - Becomes normal flow element */
+    .hero-image {
+        position: static;
+        height: 250px;
+        width: 100%;
+        order: -1;
+        margin-bottom: var(--spacing-md);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+    }
+
+    .hero-image img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Remove pseudo-element in mobile */
+    #weather h2::after {
+        content: none;
+    }
+
+    /* Weather icon for mobile */
+    .weather-icon-mobile {
+        display: inline-block;
+    }
+
+    .weather-icon-desktop {
+        display: none;
+    }
+
+    /* Sections return to auto z-index */
+    #data,
+    #weather {
+        position: static;
+        z-index: auto;
+        margin: 0 !important;
+    }
+
+    main {
+        margin: var(--spacing-sm) auto;
+        min-height: auto;
+        flex-direction: column;
+        padding: var(--spacing-sm);
+        position: static;
+    }
+
+    section {
+        padding: var(--spacing-md);
+        width: 100%;
+        margin: 0 0 var(--spacing-md) 0 !important;
+        border: 1px solid var(--color-primary);
+    }
+
+    .info-item,
+    .weather-item {
+        padding: var(--spacing-xs) 0;
+        min-height: auto;
+    }
+
+    section h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .weather-icon-mobile {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .hero-image {
+        height: 200px;
+    }
+
+    section {
+        padding: var(--spacing-sm);
+    }
+
+    .info-item,
+    .weather-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+        text-align: left;
+    }
+
+    .info-item .value,
+    .weather-item .value {
+        align-self: flex-end;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast for better accessibility */
+@media (prefers-contrast: high) {
+    :root {
+        --color-text: #000000;
+        --color-text-light: #333333;
+        --color-accent: #FFFFFF;
+    }
+
+    section {
+        border: 3px solid var(--color-dark);
+    }
 }

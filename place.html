@@ -4,105 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Information about Madagascar">
-    <title>Madagascar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Madagascar - WDD 131 - Gary Selios">
+    <meta name="author" content="Gary Selios">
+    <title>Madagascar - WDD 131 – Gary Selios</title>
     <link rel="stylesheet" href="styles/place.css">
-    <link rel="stylesheet" href="styles/place-small.css">
+    <script src="scripts/place.js"></script>
+    <title>Madagascar</title>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Madagascar</h1>
-        </header>
+    <header>
+        <h1>MADAGASCAR</h1>
+    </header>
 
-        <main>
-            <!-- IMAGEN PARA MOBILE -->
-            <div class="mobile-image">
-                <img 
-                    src="images/madagascar-small.jpg" 
-                    alt="Madagascar landscape - mobile view"
-                    srcset="images/madagascar-sma 768w, images/madagascar.jpg 1200w"
-                    sizes="(max-width: 767px) 100vw, 0vw"
-                >
-            </div>
-            
-            <div class="hero-section">
-                <!-- IMAGEN DE FONDO PARA DESKTOP -->
-                <div class="background-image">
-                    <img 
-                        src="images/madagascar.jpg" 
-                        alt="Madagascar landscape - desktop view"
-                        srcset="images/madagascar-small.jpg 768w, images/madagascar.jpg 1200w"
-                        sizes="(min-width: 768px) 100vw, 0vw"
-                    >
+    <main>
+        <!-- HERO IMAGE WITH SRCSET -->
+        <div class="hero-image">
+            <img src="images/madagascar2.webp" alt="Madagascar Landscape" srcset="images/madagascar2.webp 768w,
+                        images/madagascar2.webp 1200w,
+                        images/madagascar2.webp 1920w" sizes="(max-width: 768px) 100vw,
+                       (max-width: 1200px) 100vw,
+                       100vw">
+        </div>
+
+        <section id="data">
+            <h2>Data</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Area:</span>
+                    <span class="value">176,215 km²</span>
                 </div>
-
-                <div class="cards-overlay">
-                    <section class="data-card">
-                        <h2>Data</h2>
-                        <div class="info-item">
-                            <span class="label">Area:</span>
-                            <span class="value">587,041 sq km</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Population:</span>
-                            <span class="value">27,691,018</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Capital:</span>
-                            <span class="value">Antananarivo</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Languages:</span>
-                            <span class="value">Malagasy, French</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Currency:</span>
-                            <span class="value">Malagasy Ariary</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Time Zone:</span>
-                            <span class="value">UTC+3</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Calling Code:</span>
-                            <span class="value">+261</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Internet TLD:</span>
-                            <span class="value">.mg</span>
-                        </div>
-                    </section>
-
-                    <section class="weather-card">
-                        <h2>Weather</h2>
-                        <div class="info-item">
-                            <span class="label">Temperature:</span>
-                            <span class="value">10°C</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Conditions:</span>
-                            <span class="value">Partly Cloudy</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Wind:</span>
-                            <span class="value">5 km/h</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Wind Chill:</span>
-                            <span class="value">9.8°C</span>
-                        </div>
-                    </section>
+                <div class="info-item">
+                    <span class="label">Population:</span>
+                    <span class="value">3,500,000</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Capital:</span>
+                    <span class="value">Montevideo</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Languages:</span>
+                    <span class="value">Spanish</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Currency:</span>
+                    <span class="value">Uruguayan Pesos</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Time Zone:</span>
+                    <span class="value">UTC -3</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Calling Code:</span>
+                    <span class="value">+598</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Internet TLD:</span>
+                    <span class="value">.uy</span>
                 </div>
             </div>
-        </main>
+        </section>
 
-        <footer>
-            <p class="copyright">©2024 💡 Rubia Magdelena Francesco 💡 Madagascar</p>
-            <p class="last-modified">Last Modification: 02/08/2024 22:47:47</p>
-        </footer>
-    </div>
+        <section id="weather">
+            <h2>Weather</h2>
+            <div class="weather-grid">
+                <div class="weather-item">
+                    <span class="label">Temperature:</span>
+                    <span class="value">28°C</span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Conditions:</span>
+                    <span class="value">
+                        <span class="weather-icon-desktop">Sunny</span>
+                        <img src="images/sunny.svg" alt="Sunny" class="weather-icon-mobile">
+                    </span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Wind:</span>
+                    <span class="value">5 km/h</span>
+                </div>
+                <div class="weather-item">
+                    <span class="label">Wind Chill:</span>
+                    <span class="value">28°C</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p> 😎 Gary Selios - Uruguay 😎</p>
+        <p class="last-modified">Last Modification: 02/08/2024 22:47:47</p>
+    </footer>
 </body>
 
 </html>
