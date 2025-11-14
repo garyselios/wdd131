@@ -17,12 +17,25 @@
         </header>
 
         <main>
-            <!-- IMAGEN SOLO PARA MOBILE -->
-            <div class="mobile-image"></div>
-
+            <!-- IMAGEN PARA MOBILE -->
+            <div class="mobile-image">
+                <img 
+                    src="images/madagascar-small.jpg" 
+                    alt="Madagascar landscape - mobile view"
+                    srcset="images/madagascar-sma 768w, images/madagascar.jpg 1200w"
+                    sizes="(max-width: 767px) 100vw, 0vw"
+                >
+            </div>
+            
             <div class="hero-section">
+                <!-- IMAGEN DE FONDO PARA DESKTOP -->
                 <div class="background-image">
-                    <!-- Imagen de fondo para desktop -->
+                    <img 
+                        src="images/madagascar.jpg" 
+                        alt="Madagascar landscape - desktop view"
+                        srcset="images/madagascar-small.jpg 768w, images/madagascar.jpg 1200w"
+                        sizes="(min-width: 768px) 100vw, 0vw"
+                    >
                 </div>
 
                 <div class="cards-overlay">
