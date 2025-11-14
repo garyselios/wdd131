@@ -395,7 +395,7 @@ footer a:hover {
 }
 
 /* High contrast for better accessibility */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
     :root {
         --color-text: #000000;
         --color-text-light: #333333;
