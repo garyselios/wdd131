@@ -124,9 +124,11 @@ main {
 
 /* Pseudo-element for weather icon in desktop */
 #weather h2::after {
-    content: " ☀️";
-    /* Emoji for desktop */
-    font-size: var(--font-size-lg);
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('../images/sunny.svg') no-repeat center/contain;
     margin-left: var(--spacing-xs);
 }
 
