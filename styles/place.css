@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: white;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgb(75, 197, 64);
+    width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* HERO SECTION */
+.hero-section {
+    flex: 1;
+    position: relative;
+    min-height: 70vh;
+    padding: 40px 20px;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0;
+}
+
+.cards-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* TARJETAS - MOBILE FIRST */
+.data-card,
+.weather-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 2px solid #ecf0f1;
+    font-size: 1.8rem;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+.value {
+    color: #7f8c8d;
+    font-size: 1.8rem;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgb(75, 197, 64);
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.copyright {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.last-modified {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: white;
+}
