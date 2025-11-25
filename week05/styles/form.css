@@ -1,0 +1,268 @@
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #2ecc71;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --gray: #95a5a6;
+    --danger: #e74c3c;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+header {
+    background: var(--dark);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    padding: 0;
+}
+
+.review-form {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1rem;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+select:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Rating Stars - SISTEMA MEJORADO */
+.rating-container {
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    /* Mantener orden normal */
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.star {
+    font-size: 2.5rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: grid;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+}
+
+.checkbox-item label {
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Textarea */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-weight: 600;
+}
+
+.submit-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* FOOTER STYLES */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+footer p:first-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 0;
+        min-height: 90vh;
+    }
+
+    header,
+    footer {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .review-form {
+        padding: 1.5rem;
+    }
+
+    .stars {
+        gap: 2px;
+    }
+
+    .star {
+        font-size: 2rem;
+    }
+
+    .rating-labels {
+        font-size: 0.7rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .review-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .star {
+        font-size: 1.8rem;
+    }
+
+    header,
+    footer {
+        padding: 1rem;
+    }
+}
