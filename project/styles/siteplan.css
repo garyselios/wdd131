@@ -1,0 +1,153 @@
+/* Site Plan Styles for Inn Among Trees */
+:root {
+    --forest-green: #2d5016;
+    --wood-brown: #8f6b3c;
+    --cream: #f4f1e8;
+    --dark-green: #1a3310;
+    --text-dark: #333333;
+}
+
+/* TYPOGRAPHY APPLIED */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream);
+    margin: 0;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', Georgia, serif;
+    color: var(--forest-green);
+}
+
+/* COLOR SCHEMA APPLIED */
+header {
+    background-color: var(--dark-green);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--wood-brown);
+}
+
+/* Color Swatches */
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.color-swatch {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.color-info {
+    flex-grow: 1;
+}
+
+/* Wireframe Styles */
+.wireframe-section {
+    margin-bottom: 2rem;
+}
+
+.wireframe-mobile,
+.wireframe-desktop {
+    border: 2px solid var(--wood-brown);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+.wireframe-box {
+    background-color: var(--forest-green);
+    color: white;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Page Structure */
+.site-structure {
+    margin-top: 2rem;
+}
+
+.page-structure {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.page-item {
+    background-color: var(--wood-brown);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Font Demos */
+.font-demo-heading {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.font-demo-body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-green);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .color-palette {
+        flex-direction: column;
+    }
+
+    .page-structure {
+        grid-template-columns: 1fr;
+    }
+}
