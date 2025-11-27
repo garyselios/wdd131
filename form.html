@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reseña de Producto</title>
+    <title>Product Review</title>
     <link rel="stylesheet" href="styles/form.css">
     <script src="scripts/products.js"></script>
     <script src="scripts/form.js"></script>
@@ -14,23 +14,23 @@
 <body>
     <div class="container">
         <header>
-            <h1>Reseña de Producto</h1>
-            <p>Comparte tu experiencia con nuestros productos</p>
+            <h1>Product Review</h1>
+            <p>Share your experience with our products</p>
         </header>
 
         <main>
             <form id="reviewForm" method="get" action="review.html" class="review-form">
                 <!-- Product Name -->
                 <div class="form-group">
-                    <label for="productName">Nombre del Producto *</label>
+                    <label for="productName">Product Name *</label>
                     <select id="productName" name="productName" required>
-                        <option value="" disabled selected>Selecciona un Producto...</option>
+                        <option value="" disabled selected>Select a Product...</option>
                     </select>
                 </div>
 
                 <!-- Overall Rating -->
                 <div class="form-group">
-                    <label>Calificación General *</label>
+                    <label>Overall Rating *</label>
                     <div class="rating-container">
                         <div class="stars">
                             <input type="radio" id="star1" name="rating" value="1" required>
@@ -49,64 +49,64 @@
                             <label for="star5" class="star">&#9733;</label>
                         </div>
                         <div class="rating-labels">
-                            <span>Malo</span>
-                            <span>Regular</span>
-                            <span>Bueno</span>
-                            <span>Muy Bueno</span>
-                            <span>Excelente</span>
+                            <span>Poor</span>
+                            <span>Fair</span>
+                            <span>Good</span>
+                            <span>Very Good</span>
+                            <span>Excellent</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Date of Installation -->
                 <div class="form-group">
-                    <label for="installDate">Fecha de Instalación *</label>
+                    <label for="installDate">Installation Date *</label>
                     <input type="date" id="installDate" name="installDate" required>
                 </div>
 
                 <!-- Useful Features -->
                 <div class="form-group">
-                    <label>Características Útiles (Selecciona todas las que apliquen)</label>
+                    <label>Useful Features (Select all that apply)</label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="feature1" name="features" value="facil-instalacion">
-                            <label for="feature1">Fácil instalación</label>
+                            <input type="checkbox" id="feature1" name="features" value="easy-installation">
+                            <label for="feature1">Easy installation</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="feature2" name="features" value="buen-diseno">
-                            <label for="feature2">Buen diseño</label>
+                            <input type="checkbox" id="feature2" name="features" value="good-design">
+                            <label for="feature2">Good design</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="feature3" name="features" value="valor-precio">
-                            <label for="feature3">Buena relación calidad-precio</label>
+                            <input type="checkbox" id="feature3" name="features" value="value-price">
+                            <label for="feature3">Good value for money</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="feature4" name="features" value="funcionalidad">
-                            <label for="feature4">Excelente funcionalidad</label>
+                            <input type="checkbox" id="feature4" name="features" value="functionality">
+                            <label for="feature4">Excellent functionality</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="feature5" name="features" value="durabilidad">
-                            <label for="feature5">Alta durabilidad</label>
+                            <input type="checkbox" id="feature5" name="features" value="durability">
+                            <label for="feature5">High durability</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Written Review -->
                 <div class="form-group">
-                    <label for="writtenReview">Reseña Escrita</label>
+                    <label for="writtenReview">Written Review</label>
                     <textarea id="writtenReview" name="writtenReview"
-                        placeholder="Comparte tus experiencias detalladas con el producto..." rows="5"></textarea>
+                        placeholder="Share your detailed experiences with the product..." rows="5"></textarea>
                 </div>
 
                 <!-- User Name -->
                 <div class="form-group">
-                    <label for="userName">Tu Nombre (Opcional)</label>
-                    <input type="text" id="userName" name="userName" placeholder="Ingresa tu nombre">
+                    <label for="userName">Your Name (Optional)</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your name">
                 </div>
 
                 <!-- Submit Button -->
                 <div class="form-group">
-                    <input type="submit" value="Enviar Reseña" class="submit-btn">
+                    <input type="submit" value="Submit Review" class="submit-btn">
                 </div>
             </form>
         </main>

@@ -1,4 +1,4 @@
-// VERSIÓN SUPER SIMPLE QUE SÍ FUNCIONA
+
 window.onload = function () {
     let count = localStorage.getItem('reviewCount');
     count = count ? parseInt(count) + 1 : 1;

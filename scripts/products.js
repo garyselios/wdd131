@@ -1,4 +1,4 @@
-// Array de productos proporcionado
+
 const products = [
     {
         id: "fc-1888",

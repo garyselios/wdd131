@@ -1,15 +1,15 @@
-// Poblar el select de productos
+// Populate product select
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM cargado - inicializando formulario');
+    console.log('DOM loaded - initializing form');
 
     const productSelect = document.getElementById('productName');
 
-    // Limpiar opciones existentes (excepto la primera)
+    // Clear existing options (except the first one)
     while (productSelect.children.length > 1) {
         productSelect.removeChild(productSelect.lastChild);
     }
 
-    // Agregar opciones de productos
+    // Add product options
     products.forEach(product => {
         const option = document.createElement('option');
         option.value = product.id;
@@ -17,35 +17,35 @@ document.addEventListener('DOMContentLoaded', function () {
         productSelect.appendChild(option);
     });
 
-    // Establecer la fecha actual como valor por defecto para la fecha de instalación
+    // Set current date as default value for installation date
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('installDate').value = today;
 
-    // SISTEMA DE ESTRELLAS - VERSIÓN SIMPLIFICADA Y FUNCIONAL
+    // STAR RATING SYSTEM - SIMPLIFIED AND FUNCTIONAL VERSION
     const starElements = document.querySelectorAll('.star');
     const radioInputs = document.querySelectorAll('input[name="rating"]');
 
-    console.log('Estrellas encontradas:', starElements.length);
-    console.log('Radio inputs encontrados:', radioInputs.length);
+    console.log('Stars found:', starElements.length);
+    console.log('Radio inputs found:', radioInputs.length);
 
-    // Estado inicial: todas las estrellas grises
+    // Initial state: all stars gray
     resetStars();
 
-    // Eventos para cada estrella
+    // Events for each star
     starElements.forEach((star, index) => {
         const radioInput = radioInputs[index];
 
-        console.log(`Configurando estrella ${index + 1}`);
+        console.log(`Setting up star ${index + 1}`);
 
-        // Mouse sobre la estrella
+        // Mouse over star
         star.addEventListener('mouseenter', function () {
-            console.log('Mouse enter en estrella:', index + 1);
+            console.log('Mouse enter on star:', index + 1);
             highlightStars(index + 1);
         });
 
-        // Mouse sale de la estrella
+        // Mouse leaves star
         star.addEventListener('mouseleave', function () {
-            console.log('Mouse leave en estrella:', index + 1);
+            console.log('Mouse leave on star:', index + 1);
             const checkedRadio = document.querySelector('input[name="rating"]:checked');
             if (checkedRadio) {
                 highlightStars(parseInt(checkedRadio.value));
@@ -54,26 +54,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Click en la estrella
+        // Click on star
         star.addEventListener('click', function () {
-            console.log('Click en estrella:', index + 1);
+            console.log('Click on star:', index + 1);
             radioInput.checked = true;
             highlightStars(index + 1);
         });
     });
 
-    // También agregar eventos a los radio inputs por si el usuario hace click directamente
+    // Also add events to radio inputs in case user clicks directly
     radioInputs.forEach((radio, index) => {
         radio.addEventListener('change', function () {
             if (this.checked) {
-                console.log('Radio cambiado a:', this.value);
+                console.log('Radio changed to:', this.value);
                 highlightStars(parseInt(this.value));
             }
         });
     });
 
     function highlightStars(rating) {
-        console.log('Resaltando estrellas hasta:', rating);
+        console.log('Highlighting stars up to:', rating);
         resetStars();
         starElements.forEach((star, index) => {
             if (index < rating) {
@@ -83,25 +83,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function resetStars() {
-        console.log('Reseteando estrellas a gris');
+        console.log('Resetting stars to gray');
         starElements.forEach(star => {
             star.style.color = '#ddd';
         });
     }
 
-    // Validación adicional del formulario
+    // Additional form validation
     const form = document.getElementById('reviewForm');
     form.addEventListener('submit', function (event) {
         let isValid = true;
 
-        // Validar que se haya seleccionado un producto
+        // Validate that a product has been selected
         const productName = document.getElementById('productName');
         if (!productName.value) {
             isValid = false;
             highlightError(productName);
         }
 
-        // Validar que se haya seleccionado una calificación
+        // Validate that a rating has been selected
         const ratingSelected = document.querySelector('input[name="rating"]:checked');
         if (!ratingSelected) {
             isValid = false;
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
             highlightError(starsContainer);
         }
 
-        // Validar fecha de instalación
+        // Validate installation date
         const installDate = document.getElementById('installDate');
         if (!installDate.value) {
             isValid = false;
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!isValid) {
             event.preventDefault();
-            alert('Por favor, completa todos los campos requeridos marcados con *.');
+            alert('Please complete all required fields marked with *.');
         }
     });
 
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
         element.style.borderColor = 'var(--danger)';
         element.style.boxShadow = '0 0 5px var(--danger)';
 
-        // Remover el highlight después de 3 segundos
+        // Remove highlight after 3 seconds
         setTimeout(() => {
             element.style.borderColor = '';
             element.style.boxShadow = '';
