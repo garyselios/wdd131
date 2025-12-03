@@ -4,90 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inn Among Trees - Peaceful Countryside Retreat</title>
     <meta name="description"
-        content="WDD 131 – Dynamic Web Fundamentals - Gary Selios - Personal portfolio and course projects">
-    <meta name="author" content="Gary Selios">
-    <title>WDD 131 – Dynamic Web Fundamentals – Gary Selios</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <script src="scripts/getdates.js" defer></script>
+        content="Experience tranquility at Inn Among Trees. A peaceful countryside retreat nestled in nature. Book your escape today.">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/trees.css">
+    <link rel="stylesheet" href="styles/home.css">
+
 </head>
 
 <body>
-    <header>
-        <h1><span id="course-title">WDD 131 – Dynamic Web Fundamentals</span></h1>
-        <nav>
-            <a href="https://www.linkedin.com/in/gary-selios-bennett-0342b0130/?locale=en_US">LinkedIn</a>
-            <a href="https://byupw.instructure.com/">Canvas</a>
-            <a href="https://www.churchofjesuschrist.org/study/scriptures">Scriptures</a>
-            <a href="#">Final Project</a>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/tree.png" alt="Inn Among Trees Logo" class="logo-img">
+                <span class="logo-text">Inn Among Trees</span>
+            </a>
+
+            <!-- Hamburger menu for mobile -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+            </ul>
         </nav>
     </header>
 
-
-    <main>
-        <h2>Gary Selios Bennett</h2>
-
-        <div class="main-container">
-            <div class="left-column">
-                <section class="card">
-                    <!-- About Me -->
-                    <div class="section-container">
-                        <h3 class="blue-title">About Me</h3>
-                        <div class="card-content">
-                            <div class="text-content">
-                                <p>I am Gary Selios. I live in Uruguay and I am currently studying for my Bachelor's
-                                    degree in Applied Technology. Although my focus and work experience is on IT
-                                    infrastructure, I also have an associate's degree in web development since 2014.
-                                </p>
-                            </div>
-                            <img src="images/profile.jpg" alt="Photo">
-                        </div>
-                    </div>
-
-                    <!-- Horizontal dividing line -->
-                    <hr class="divider">
-
-                    <div class="section-container">
-                        <h3>Uruguay</h3>
-                        <div class="card-content uruguay-content">
-                            <img src="images/uruguay.jpg" alt="uruguay">
-                            <div class="text-content">
-                                <p>Uruguay is a small country in South America, located between Brazil and Argentina,
-                                    with access to the Atlantic Ocean. Its capital is Montevideo, which combines
-                                    beaches, culture and architecture. Uruguay is known for its tranquility, its high
-                                    quality of life, its passion for soccer, mate, and its renowned beef.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div class="right-column">
-                <section class="card">
-                    <h3 class="blue-title">Web Dev Resources</h3>
-                    <ul>
-                        <li><a href="#">Dev.to Community</a></li>
-                        <li><a href="#">Smashing Magazine</a></li>
-                        <li><a href="#">CSS Tricks</a></li>
-                        <li><a href="#">W3 Schools</a></li>
-                        <li><a href="#">Udemy</a></li>
-                        <li><a href="#">Image Placeholder</a></li>
-                    </ul>
-                </section>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Peace Among the Trees</h1>
+            <p>Escape to our serene countryside retreat where nature embraces you. Experience tranquility like never
+                before.</p>
+            <a href="reservations.html" class="btn">Book Your Stay</a>
         </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <h2 class="section-title">Welcome to Inn Among Trees</h2>
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <p>Nestled in the heart of a lush forest, Inn Among Trees offers a unique escape from the hustle
+                            and bustle of everyday life. Our retreat is designed for those seeking peace, connection
+                            with nature, and memorable experiences.</p>
+                        <p>Whether you're looking for a romantic getaway, a family adventure, or a solo retreat, our inn
+                            provides the perfect setting with comfortable accommodations, delicious farm-to-table
+                            dining, and a variety of outdoor activities.</p>
+                        <a href="about.html" class="btn btn-secondary mt-2">Our Story</a>
+                    </div>
+                    <div class="welcome-image">
+                        <img src="images/cozy_cabin.jpg" alt="Cozy cabin among trees" class="lazy-img" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Gallery -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Experience Our Retreat</h2>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Images will be loaded dynamically via JavaScript -->
+                </div>
+                <div class="gallery-controls">
+                    <button class="btn btn-secondary" id="prevBtn">Previous</button>
+                    <button class="btn" id="nextBtn">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Services -->
+        <section class="services-preview">
+            <div class="container">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🛏️</div>
+                        <h3>Cozy Accommodations</h3>
+                        <p>Comfortable rooms with forest views, fireplaces, and all modern amenities while maintaining
+                            rustic charm.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🍽️</div>
+                        <h3>Farm-to-Table Dining</h3>
+                        <p>Fresh meals prepared with locally sourced ingredients. Special dietary needs accommodated.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚶</div>
+                        <h3>Guided Activities</h3>
+                        <p>Hiking, bird watching, horseback riding, and seasonal activities guided by local experts.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="services.html" class="btn">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready for Your Escape?</h2>
+                    <p>Book your stay today and experience the tranquility of Inn Among Trees. Limited availability for
+                        peak seasons.</p>
+                    <a href="reservations.html" class="btn">Check Availability</a>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Inn Among Trees</h3>
+                <p>123 Forest Path Road<br>
+                    Valle del Lunarejo, Rivera<br>
+                    Uruguay</p>
+                <p>📞 + 598 91-45-67<br>
+                    ✉️ info@innamongtrees.com</p>
+            </div>
 
-    <footer>
-        <p>©<span id="currentyear"></span> 😎 Gary Selios - Uruguay 😎</p>
-        <p id="lastModified">Last modification: 29/10/2025 18:50</p>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="TripAdvisor">⭐</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Inn Among Trees. All rights reserved. | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Privacy Policy</a> | <a href="#"
+                    style="color: rgba(255,255,255,0.8);">Terms of Service</a></p>
+        </div>
     </footer>
+
+    <!-- JavaScript Files -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/gallery.js"></script>
 </body>
 
 </html>
